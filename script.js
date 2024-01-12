@@ -5,10 +5,12 @@ console.log('js ok');
 // ^ MILESTONE 3 - Dopo che sono state registrare le 5 risposte verifico quali numeri sono stati individuati
 
 // ! =================
-// ! RECUPERO ELEMENTi
+// ! RECUPERO ELEMENTI
 // ! =================
 
 const display = document.getElementById('display');
+const numbers = document.getElementById('number');
+const title = document.querySelector('.mt-3');
 
 // ? =================
 // ? FUNZIONI GENERALI
@@ -28,6 +30,8 @@ const display = document.getElementById('display');
     return casualNumbers;
  }
 
+ numbers.innerText = getRandomNumbers();
+
  // ~ ==================
  // ~ FUNZIONI TEMPORALI
  // ~ ==================
@@ -36,10 +40,11 @@ const display = document.getElementById('display');
  display.innerText = seconds;
 
  const countDown = setInterval(() => {
-    display.innerText = --seconds;
+    display.innerText = + --seconds;
     if(seconds === 0) {
+        title.innerText = 'TEMPO SCADUTO!!';
         display.innerText = '';
-        alert('TEMPO SCADUTO');
+        numbers.innerText = '';
         clearInterval(countDown);
     }
  }, 1000)
