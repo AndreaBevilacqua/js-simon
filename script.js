@@ -26,28 +26,45 @@ const title = document.querySelector('.mt-3');
     let casualNumbers = [];
     for(let i = 0; i < 5; i++) {
         casualNumbers.push(getRandomNumber(1, 50));
+        console.log(casualNumbers);
     }
     return casualNumbers;
  }
-
+ 
  numbers.innerText = getRandomNumbers();
+ 
+ // ~ ========================================       
+ // ~ FUNZIONI TEMPORALI & PROGRAMMA EFFETTIVO
+ // ~ ========================================
 
- // ~ ==================
- // ~ FUNZIONI TEMPORALI
- // ~ ==================
-
+ 
+// Creo un timer di 30 e modifico le scritte in pagina
  let seconds = 30;
  display.innerText = seconds;
-
+ 
  const countDown = setInterval(() => {
-    display.innerText = + --seconds;
-    if(seconds === 0) {
-        title.innerText = 'TEMPO SCADUTO!!';
-        display.innerText = '';
-        numbers.innerText = '';
-        clearInterval(countDown);
-    }
- }, 1000)
+     display.innerText = + --seconds;
+     if(seconds === 0) {
+         title.innerText = 'TEMPO SCADUTO!!';
+         display.innerText = '';
+         numbers.innerText = '';
+         clearInterval(countDown);
+
+         // Chiedo all'utente quali numeri ha visualizzato
+         let userAnswers = [];
+         for (let i = 0; i < 5; i++) {
+         let numberInsert = prompt("Inserisci un numero che hai visto:");
+         userAnswers.push(parseInt(numberInsert));
+         }
+        }
+    }, 1000)
+
+
+
+
+
+
+
 
 
 
