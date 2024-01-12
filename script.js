@@ -23,7 +23,7 @@ console.log('js ok');
     return casualNumbers;
  }
 
- getRandomNumbers();
+ 
 
 
 
