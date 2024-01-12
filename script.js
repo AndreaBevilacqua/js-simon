@@ -56,6 +56,19 @@ const title = document.querySelector('.mt-3');
          let numberInsert = prompt("Inserisci un numero che hai visto:");
          userAnswers.push(parseInt(numberInsert));
          }
+
+        // // Verifica se i numeri inseriti dall'utente sono gli stessi generati dalla funzione
+        // const numeriCasuali = numbers.innerText.split(',').map(Number);
+        // const numeriCorretti = numeriCasuali.filter(numero => userAnswers.includes(numero));
+
+        // // Mostra i risultati in console
+        // if (numeriCorretti.length === 5) {
+        //     console.log("Hai indovinato tutti i numeri!");
+        // } else {
+        //     console.log(numeriCasuali);
+        //     console.log(userAnswers);
+        //     console.log(numeriCorretti);
+        //  } DA CORREGGERE
         }
     }, 1000)
 
