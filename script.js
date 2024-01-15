@@ -57,18 +57,19 @@ const title = document.querySelector('.mt-3');
          userAnswers.push(parseInt(numberInsert));
          }
 
-        // // Verifica se i numeri inseriti dall'utente sono gli stessi generati dalla funzione
-        // const numeriCasuali = numbers.innerText.split(',').map(Number);
-        // const numeriCorretti = numeriCasuali.filter(numero => userAnswers.includes(numero));
+        // Verifica se i numeri inseriti dall'utente sono gli stessi generati dalla funzione
+        const correctAnswers = [];
+        for (let guess of userAnswers) {
+            if (userAnswers.includes(guess)) correctAnswers.push(guess);
+        }
 
-        // // Mostra i risultati in console
-        // if (numeriCorretti.length === 5) {
-        //     console.log("Hai indovinato tutti i numeri!");
-        // } else {
-        //     console.log(numeriCasuali);
-        //     console.log(userAnswers);
-        //     console.log(numeriCorretti);
-        //  } DA CORREGGERE
+        // Stampo il risultato
+        if(correctAnswers.length === 5){
+            console.log('Hai indovinato tutti i numeri')
+        } else {
+            console.log(`Hai indovinato ${correctAnswers.length} numeri! (${correctAnswers})`);
+        }
+
         }
     }, 1000)
 
